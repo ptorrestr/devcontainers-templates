@@ -1,0 +1,31 @@
+{
+    "id": "python3.7-pyspark",
+    "version": "0.0.1",
+    "name": "python3.7-pyspark with poetry",
+    "description": "devcontainer with pyenv as main source to get python3.7-pyspark version and poetry to manage dependencies on the top of DevContainer official images based on debian ",
+    "documentationURL": "https://github.com/Standard-IO/devcontainers/tree/main/src/python3-poetry-pyenv",
+    "licenseURL": "https://github.com/Standard-IO/devcontainers/blob/main/LICENSE",
+    "options": {
+        "pythonVersion":{
+            "type":"string",
+            "description": "Python version to install with Pyenv",
+            "proposals": [
+                "3",
+                "3.11"
+            ],
+            "default": "3.11"
+        },
+        "imageVariant":{
+            "type":"string",
+            "description": "Select the os to install",
+            "proposals":[
+                "debian",
+                "jammy"
+            ],
+            "default": "jammy"
+        }
+    },
+    "platforms": [
+        "Python"
+    ]
+}

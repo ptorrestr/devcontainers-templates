@@ -3,8 +3,8 @@ cd $(dirname "$0")
 source test-utils.sh
 
 # Template specific tests
-check "distro" lsb_release -c
-check "color" [ $(cat /tmp/color.txt | grep red) ]
+check "pyenv" type -p pyenv > /dev/null
+check "poetry" type -p poetry > /dev/null
 
 # Report result
 reportResults
