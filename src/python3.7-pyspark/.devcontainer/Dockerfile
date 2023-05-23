@@ -62,8 +62,6 @@ ARG JAVA_VERSION=17.0.7-tem
 ARG SBT_VERSION=1.8.3
 ARG SPARK_VERSION=3.3.1
 RUN curl -s "https://get.sdkman.io" | bash \
-    && source "$HOME/.sdkman/bin/sdkman-init.sh" \
-    && sdk install java ${JAVA_VERSION} \
-    && sdk install sbt ${SBT_VERSION} \
+    && bash -c "source $HOME/.sdkman/bin/sdkman-init.sh && sdk install java ${JAVA_VERSION} && sdk install sbt ${SBT_VERSION}" \
     && wget -O- https://archive.apache.org/dist/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop3.tgz --no-check-certificate | tar xvz - -C $HOME
 
