@@ -41,6 +41,7 @@ ARG PYTHON_PYSPARK_VERSION=3.7.16
 ENV PYENV_ROOT="${HOME}/.pyenv"
 ENV PATH="${PYENV_ROOT}/shims:${PYENV_ROOT}/bin:${HOME}/.local/bin:$PATH"
 
+# Pythons
 RUN echo "done 0" \
     && curl https://pyenv.run | bash \
     && echo "done 1" \
@@ -55,3 +56,14 @@ RUN echo "done 0" \
     && echo "done 5" \
     && pyenv install ${PYTHON_PYSPARK_VERSION} \
     && echo "done 6." 
+
+# Java & Spark
+ARG JAVA_VERSION=17.0.7-tem
+ARG SBT_VERSION=1.8.3
+ARG SPARK_VERSION=3.3.1
+RUN curl -s "https://get.sdkman.io" | bash \
+    && source "$HOME/.sdkman/bin/sdkman-init.sh" \
+    && sdk install java ${JAVA_VERSION} \
+    && sdk install sbt ${SBT_VERSION} \
+    && wget -O- https://archive.apache.org/dist/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop3.tgz --no-check-certificate | tar xvz - -C $HOME
+
