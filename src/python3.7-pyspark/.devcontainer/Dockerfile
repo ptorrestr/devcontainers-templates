@@ -54,4 +54,4 @@ RUN echo "done 0" \
     && pip3 install "dvc[s3]" pre-commit \
     && echo "done 5" \
     && pyenv install ${PYTHON_PYSPARK_VERSION} \
-    && echo "done 6" 
+    && echo "done 6." 
