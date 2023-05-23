@@ -28,7 +28,7 @@ RUN DEBIAN_FRONTEND=noninteractive \
 
 # Install the root Zscaler certificate
 RUN mkdir /usr/local/share/ca-certificates/custom-ca
-COPY --chmod=600 ZscalerRootCertificate-2048-SHA256.crt /usr/local/share/ca-certificates/custom-ca/
+COPY --chmod=600 src/python3.7-pyspark/.devcontainer/ZscalerRootCertificate-2048-SHA256.crt /usr/local/share/ca-certificates/custom-ca/
 RUN update-ca-certificates
 
 # Python and poetry installation
