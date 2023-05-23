@@ -12,7 +12,7 @@ jobs:
         id: filter
         with:
           filters: |
-            python3.7-pysaprk: ./**/python3.7-pyspark/**
+            python3.7-pyspark: ./**/python3.7-pyspark/**
 
   test:
     needs: [detect-changes]
