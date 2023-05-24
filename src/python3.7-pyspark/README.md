@@ -1,17 +1,17 @@
 
-# My Favorite Color (color)
+# python3.7-pyspark with poetry (python3.7-pyspark)
 
-A Template to remind you of your favorite color
+devcontainer with pyenv as main source to get python3.7-pyspark version and poetry to manage dependencies on the top of DevContainer official images based on debian 
 
 ## Options
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-| imageVariant | Debian version (use bullseye on local arm64/Apple Silicon): | string | bullseye |
-| favorite | Choose your favorite color. | string | red |
+| pythonVersion | Python version to install with Pyenv | string | 3.11 |
+| imageVariant | Select the os to install | string | jammy |
 
 
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-template.json](https://github.com/devcontainers/template-starter/blob/main/src/color/devcontainer-template.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-template.json](https://github.com/ptorrestr/devcontainers-templates/blob/main/src/python3.7-pyspark/devcontainer-template.json).  Add additional notes to a `NOTES.md`._
