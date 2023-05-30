@@ -65,3 +65,8 @@ RUN curl -s "https://get.sdkman.io" | bash \
     && bash -c "source $HOME/.sdkman/bin/sdkman-init.sh && sdk install java ${JAVA_VERSION} && sdk install sbt ${SBT_VERSION}"
 #    && wget -O- https://archive.apache.org/dist/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop3.tgz --no-check-certificate | tar xvz -C $HOME
 
+# Install cert file in python
+ENV SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
+COPY install_certs_python.py $HOME/install_certs_python.py
+RUN $HOME/.pyenv/versions/${PYTHON_VERSION}/bin/python3 $HOME/install_certs_python.py
+RUN $HOME/.pyenv/versions/${PYTHON_PYSPARK_VERSION}/bin/python3 $HOME/install_certs_python.py

@@ -10,10 +10,9 @@
             "type":"string",
             "description": "Python version to install with Pyenv",
             "proposals": [
-                "3",
-                "3.11"
+                "3.11.3"
             ],
-            "default": "3.11"
+            "default": "3.11.3"
         },
         "imageVariant":{
             "type":"string",
