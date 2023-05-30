@@ -7,7 +7,7 @@ devcontainer with pyenv as main source to get python3.7-pyspark version and poet
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-| pythonVersion | Python version to install with Pyenv | string | 3.11 |
+| pythonVersion | Python version to install with Pyenv | string | 3.11.3 |
 | imageVariant | Select the os to install | string | jammy |
 
 
