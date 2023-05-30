@@ -32,7 +32,7 @@ def main():
     print(" -- creating symlink to ssl cafile")
     os.symlink(openssl_cafile, relpath_to_certifi_cafile)
     print(" -- setting permissions")
-    os.chmod(relpath_to_certifi_cafile, STAT_0o775)
+    #os.chmod(relpath_to_certifi_cafile, STAT_0o775)
     print(" -- update complete")
     
 
