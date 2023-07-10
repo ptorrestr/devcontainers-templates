@@ -35,7 +35,7 @@ RUN update-ca-certificates
 USER $USER
 ARG HOME="/home/$USER"
 ARG PYTHON_VERSION=${templateOption:pythonVersion}
-ARG PYTHON_PYSPARK_VERSION=3.7.16
+ARG PYTHON_PYSPARK_VERSION=${templateOption:pythonPysparkVersion}
 # ARG PYTHON_VERSION=3.10
 
 ENV PYENV_ROOT="${HOME}/.pyenv"
@@ -58,8 +58,8 @@ RUN echo "done 0" \
     && echo "done 6." 
 
 # Java & Spark
-ARG JAVA_VERSION=17.0.7-tem
-ARG SBT_VERSION=1.8.3
+ARG JAVA_VERSION=${templateOption:javaVersion}
+ARG SBT_VERSION=${templateOption:sbtVersion}
 ARG SPARK_VERSION=3.3.1
 RUN curl -s "https://get.sdkman.io" | bash \
     && bash -c "source $HOME/.sdkman/bin/sdkman-init.sh && sdk install java ${JAVA_VERSION} && sdk install sbt ${SBT_VERSION}"
@@ -67,6 +67,7 @@ RUN curl -s "https://get.sdkman.io" | bash \
 
 # Install cert file in python
 ENV SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
+ENV AWS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 COPY install_certs_python.py $HOME/install_certs_python.py
 RUN $HOME/.pyenv/versions/${PYTHON_VERSION}/bin/python3 $HOME/install_certs_python.py
 RUN $HOME/.pyenv/versions/${PYTHON_PYSPARK_VERSION}/bin/python3 $HOME/install_certs_python.py
