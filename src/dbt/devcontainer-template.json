@@ -33,6 +33,15 @@
                 "1.4.0"
             ],
             "default":"1.4.0"
+        },
+        "imageVariant":{
+            "type":"string",
+            "description": "Select the os to install",
+            "proposals":[
+                "debian",
+                "jammy"
+            ],
+            "default": "jammy"
         }
     },
     "platforms": [
