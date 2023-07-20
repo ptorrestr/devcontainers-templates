@@ -54,7 +54,7 @@ RUN echo "done 0" \
     && echo "done 4" \
     && pip3 install "dvc[s3]" pre-commit \
     && echo "done 5" \
-    && pip3 install "dbt-core=${DBT_VERSION}" "dbt-athena-community=${DBT_ATHENA_VERSION}"\
+    && pip3 install "dbt-core==${DBT_VERSION}" "dbt-athena-community==${DBT_ATHENA_VERSION}"\
     && echo "done 6"
 
 # Install cert file in python
