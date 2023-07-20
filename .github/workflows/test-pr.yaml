@@ -13,6 +13,7 @@ jobs:
         with:
           filters: |
             python3.7-pyspark: ./**/python3.7-pyspark/**
+            dbt: ./**/dbt/**
 
   test:
     needs: [detect-changes]

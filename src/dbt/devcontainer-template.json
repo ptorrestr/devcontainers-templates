@@ -1,0 +1,41 @@
+{
+    "id": "dbt",
+    "version": "0.0.1",
+    "name": "python3.11, dbt and dbt-athena-community",
+    "description": "devcontainer with dbt on the top of DevContainer official images based on debian ",
+    "documentationURL": "https://github.com/ptorrestr/devcontainers-templates/tree/main/src/dbt",
+    "licenseURL": "https://github.com/ptorrestr/devcontainers-templates/blob/main/LICENSE",
+    "options": {
+        "pythonVersion":{
+            "type":"string",
+            "description": "Python version to install with Pyenv",
+            "proposals": [
+                "3.11.3"
+            ],
+            "default": "3.11.3"
+        },
+        "dbtVersion": {
+            "type": "string",
+            "description": "Select the DBT version",
+            "proposals":[
+                "1.4.1",
+                "1.4.6",
+                "1.5.3"
+            ],
+            "default": "1.4.1"
+        },
+        "dbtAthenaCommunityVersion": {
+            "type": "string",
+            "description": "Select the DBT Athena Community version",
+            "proposals": [
+                "1.5.1",
+                "1.4.5",
+                "1.4.0"
+            ],
+            "default":"1.4.0"
+        }
+    },
+    "platforms": [
+        "Python"
+    ]
+}
